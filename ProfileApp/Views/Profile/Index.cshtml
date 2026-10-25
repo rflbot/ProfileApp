@@ -1,0 +1,30 @@
+﻿@model List<ProfileApp.Models.ProfileModel>
+
+    <h2 class="mb-3">Profiles</h2>
+    @foreach (var p in Model)
+{
+    <div class="card p-3 mb-3 shadow-sm">
+        <div class="d-flex align-items-center">
+            <img src="@p.ImageUrl"
+            alt="@p.Name"
+            class="rounded-circle me-4"
+            style="width: 100px; height: 100px; object-fit: cover; border: 2px solid #0d6efd;" />
+
+            <div>
+                <h4 class="mb-1">@p.Name</h4>
+                <p class="mb-1 text-muted">@p.Course</p>
+
+                <p class="mb-1">
+                    <strong>Email:</strong>
+                    <a href="mailto:@p.Email">@p.Email</a>
+                </p>
+
+                <p class="mb-0">
+                    <strong>GitHub:</strong>
+                    <a href="@p.GitHub" target="_blank" rel="noopener noreferrer">@p.GitHub</a>
+                </p>
+
+            </div>
+        </div>
+    </div>
+}
